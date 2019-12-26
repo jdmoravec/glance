@@ -346,7 +346,7 @@ class ImageCache(object):
 
     def cache_tee_iter(self, image_id, image_iter, image_checksum):
         try:
-            current_checksum = hashlib.md5()
+            current_checksum = hashlib.sha1()
 
             with self.driver.open_for_write(image_id) as cache_file:
                 for chunk in image_iter:
